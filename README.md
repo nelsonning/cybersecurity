@@ -98,10 +98,11 @@ SSH into the control node and follow the steps below:
   ```
   curl -o /etc/ansible/files/metricbeat-config.yml https://raw.githubusercontent.com/nelsonning/cybersecurity/main/Ansible/metricbeat-config.yml
   ```
-- Update the __hosts__ file to include 
+- Update the __hosts__ file 
   ```
   nano /etc/ansible/hosts
   ```
+  to include the following:
   ```
   [webservers]
   10.0.0.7 ansible_python_interpreter=/usr/bin/python3
