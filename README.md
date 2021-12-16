@@ -89,9 +89,19 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the __my-playbook-elk.yml__ file to __/etc/ansible__.
   ```
-  Curl -L -O 
+  curl -o /etc/ansible/my-playbook-elk.yml https://raw.githubusercontent.com/nelsonning/cybersecurity/main/Ansible/my-playbook-elk.yml
+  ```
 - Copy the __filebeat-config.yml__ and __metricbeat-config.yml__ file to __/etc/ansible/files__.
+  ```
+  curl -o /etc/ansible/files/filebeat-config.yml https://raw.githubusercontent.com/nelsonning/cybersecurity/main/Ansible/filebeat-config.yml
+  ```
+  ```
+  curl -o /etc/ansible/files/metricbeat-config.yml https://raw.githubusercontent.com/nelsonning/cybersecurity/main/Ansible/metricbeat-config.yml
+  ```
 - Update the __hosts__ file to include 
+  ```
+  nano /etc/ansible/hosts
+  ```
   ```
   [webservers]
   10.0.0.7 ansible_python_interpreter=/usr/bin/python3
@@ -99,6 +109,10 @@ SSH into the control node and follow the steps below:
   [elk]
   10.1.0.5 ansible_python_interpreter=/usr/bin/python3
   ```
-- Run the playbook, and navigate to __http://13.91.19.137:5601/app/kibana#/home__ to check that the installation worked as expected.
+- Run the playbook
+  ```
+  ansible-playbook /etc/ansible/my-playbook-elk.yml
+  ```
+- Navigate to __http://13.91.19.137:5601/app/kibana#/home__ to check that the installation worked as expected.
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+
