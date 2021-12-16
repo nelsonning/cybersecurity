@@ -51,8 +51,8 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jumpbox | Yes              | 10.0.0.7 10.0.0.8 10.1.0.5 99.244.3.5    |
-| ELK         | Yes                    | 10.0.0.7 10.0.0.8 99.244.3.5                    |
+| Jumpbox | Yes              | 10.0.0.7, 10.0.0.8, 10.1.0.5, 99.244.3.5    |
+| ELK         | Yes                    | 10.0.0.7, 10.0.0.8, 99.244.3.5                    |
 |          |                     |                      |
 
 ### Elk Configuration
@@ -61,9 +61,11 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - _TODO: What is the main advantage of automating configuration with Ansible?_
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Install Docker
+- Increase virtual memory
+- Download and launch ELK docker container
+- Enable Docker service on boot
+- Install and configure filebeat and metricbeat 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
