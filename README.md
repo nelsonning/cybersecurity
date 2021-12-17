@@ -42,7 +42,7 @@ The machines on the internal network are not exposed to the public Internet.
 Only the Jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - 99.244.0.0/16
 
-Machines within the network can only be accessed by SSH.
+Machines within the network can only be accessed by SSH (Port 22).
 - User with 99.244.3.5 IP can connect to the Jumpbox
 - Jumpbox to Web-1
 - Jumpbox to Web-2
@@ -52,10 +52,10 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jumpbox | Yes              | 10.0.0.7, 10.0.0.8, 10.1.0.5, 99.244.3.5    |
-| ELK         | Yes                    | 10.0.0.7, 10.0.0.8, 99.244.3.5                    |
-| Web-1      | No                    | 10.1.0.5, 10.0.0.4                     |
-| Web-2      | No                    | 10.1.0.5, 10.0.0.4                     |
+| Jumpbox | No              | 99.244.3.5    |
+| ELK         | No                   | 10.0.0.4                   |
+| Web-1      | No                    | 10.0.0.4                     |
+| Web-2      | No                    | 10.0.0.4                     |
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it reduces human errors when performing software deployment and configurations.  As well it reduces the total amount of time to complete these tasks. 
