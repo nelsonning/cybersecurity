@@ -10,7 +10,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   - my-playbook-elk.yml
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -43,10 +43,7 @@ Only the Jumpbox machine can accept connections from the Internet. Access to thi
 - 99.244.3.5
 
 Machines within the network can only be accessed by SSH (Port 22).
-- User with 99.244.3.5 IP can connect to the Jumpbox
-- Jumpbox to Web-1
-- Jumpbox to Web-2
-- Jumpbox to ELK
+- Jumpbox Ansible container (10.0.0.4) to ELK VM (10.1.0.5)
 
 A summary of the access policies in place can be found in the table below.
 
