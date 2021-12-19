@@ -1,6 +1,7 @@
 ---
 - name: activity 1
   hosts: webservers
+  remote_user: sysadmin
   become: true
   tasks:
 
